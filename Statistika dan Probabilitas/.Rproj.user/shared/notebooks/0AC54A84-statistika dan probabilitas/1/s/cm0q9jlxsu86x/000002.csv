@@ -1,0 +1,7 @@
+"0","##probabilitas kumulatif tidak ada unit rusak
+pbinom(q = 0, size = 10, prob = 0.05)
+"
+"1","[1]"
+"1"," 0.5987369"
+"1","
+"

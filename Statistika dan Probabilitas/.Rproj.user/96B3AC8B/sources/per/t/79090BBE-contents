@@ -1,0 +1,77 @@
+---
+title: "19523201"
+output: html_notebook
+---
+```{r}
+dataCredit <- Credit
+head(dataCredit)
+```
+#soal nomor 1
+```{r}
+mean(dataCredit$Rating)
+mean(dataCredit$Cards)
+mean(dataCredit$Age)
+
+median(dataCredit$Rating)
+median(dataCredit$Cards)
+median(dataCredit$Age)
+```
+#soal nomor 2
+```{r}
+modeOf(dataCredit$Gender)
+modeOf(dataCredit$Student)
+modeOf(dataCredit$Married)
+```
+#soal nomor 3
+```{r}
+##persentil 10
+quantile(dataCredit$Education, probs = 0.10)
+
+##persentil 37
+quantile(dataCredit$Education, probs = 0.37)
+
+##persentile 91
+quantile(dataCredit$Education, probs = 0.91)
+```
+
+#soal nomor 4
+```{r}
+quantile(dataCredit$Balance, probs = c(0.25, 0.50, 0.75))
+boxplot(dataCredit$Balance)
+```
+
+#soal nomor 5
+```{r}
+##limits and rating
+data1 <- data.frame(limit=dataCredit$Limit, rating=dataCredit$Rating)
+cor(data1)
+plot(data1$limit, data1$rating)
+
+##age and card
+data2 <- data.frame(ages=dataCredit$Age, card=dataCredit$Cards)
+cor(data2)
+plot(data2$ages, data2$card)
+
+##income and education
+data3 <- data.frame(income=dataCredit$Income, education=dataCredit$Education)
+cor(data3)
+plot(data3$income, data3$education)
+```
+
+#soal nomor 6
+Sebuah mesin yang memproduksi semacam alat, ternyata terdapat 5% rusak. Jika secara acak diambil 10 buah dari alat tersebut untuk diselidiki. Berapa probabilitas ada 2 buah unit yang rusak 
+
+```{r}
+##probabilitas 2 unit rusak
+dbinom(x = 2, size = 10, prob = 0.05)
+
+##probabilitas kumulatif 2 unit rusak
+pbinom(q = 2, size = 10, prob = 0.05)
+
+##probabilitas tidak ada unit rusak
+dbinom(x = 0, size = 10, prob = 0.05)
+
+##probabilitas kumulatif tidak ada unit rusak
+pbinom(q = 0, size = 10, prob = 0.05)
+```
+
